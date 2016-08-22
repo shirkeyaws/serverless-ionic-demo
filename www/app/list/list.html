@@ -1,0 +1,18 @@
+<ion-view title="People">
+  <div ng-if="data.records.length > 0" class="bar bar-subheader item-input-inset" ng-class="{'bar-positive': search.length > 0}">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" placeholder="Search..." ng-model="search">
+    </label>
+    <button class="button button-clear" ng-click="search=''">Clear</button>
+  </div>
+  <ion-content class="has-subheader">
+    <div ng-if="data.records.length === 0" class="empty-msg">No people found</div>
+    <div ng-if="data.records.length > 0" class="list">
+      <a class="item item-avatar" ng-repeat="rec in data.filteredRecords = (data.records | filter:search) track by rec.id" ui-sref="">
+        <h2>{{rec.text}}</h2>
+        <p>{{rec.user}} (id: {{rec.id}})</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -7,14 +7,14 @@
   function configBlock($stateProvider, $urlRouterProvider, $provide){
     $stateProvider
     .state('loading', {
-      url: '/loading',
+      url: '/',
       template: '<ion-spinner style="text-align: center; margin-top: 50%;"></ion-spinner>',
       controller: 'LoadingCtrl'
     })
-    .state('login', {
-      url: '/login',
-      templateUrl: 'app/authentication/login.html',
-      controller: 'LoginCtrl'
+    .state('list', {
+      url: '/list',
+      templateUrl: 'app/list/list.html',
+      controller: 'ListCtrl'
     })
     .state('app', {
       url: '/app',
@@ -55,7 +55,7 @@
       }
     });
 
-    $urlRouterProvider.otherwise('/loading');
+    $urlRouterProvider.otherwise('/');
 
     // catch Angular errors
     $provide.decorator('$exceptionHandler', ['$delegate', function($delegate){

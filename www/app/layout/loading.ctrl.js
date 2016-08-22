@@ -8,12 +8,6 @@
       disableAnimate: true,
       disableBack: true
     });
-    Storage.getUser().then(function(user){
-      if(user){
-        $state.go('app.twitts');
-      } else {
-        $state.go('login');
-      }
-    });
+    $state.go('list');
   }
 })();
