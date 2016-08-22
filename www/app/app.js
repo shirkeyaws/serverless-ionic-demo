@@ -55,7 +55,7 @@
       }
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/list');
 
     // catch Angular errors
     $provide.decorator('$exceptionHandler', ['$delegate', function($delegate){

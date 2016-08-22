@@ -9,7 +9,7 @@
   <ion-content class="has-subheader">
     <div ng-if="data.records.length === 0" class="empty-msg">No people found</div>
     <div ng-if="data.records.length > 0" class="list">
-      <a class="item item-avatar" ng-repeat="rec in data.filteredRecords = (data.records | filter:search) track by rec.id" ui-sref="">
+      <a class="item item-avatar" ng-repeat="rec in data.records track by rec.id">
         <h2>{{rec.text}}</h2>
         <p>{{rec.user}} (id: {{rec.id}})</p>
       </a>
